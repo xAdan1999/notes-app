@@ -1,26 +1,63 @@
+<!-- este es el componente principal, 
+  contiene otros componentes hijos -->
+
+<!-- diseño -->
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="app-container">
+
+    <!-- componente que contiene el formulario -->
+    <FormApp/> 
+    
+    <!-- componente que contiene la lista de notas -->
+    <ListApp/>
+    
+  </div>
 </template>
 
+<!-- logica -->
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+// importar componentes
+import FormApp from "./components/FormApp.vue";
+import ListApp from "./components/ListApp.vue";
 
 export default {
-  name: 'App',
+
+  //para decirle a vue que haga uso de los componentes importados
   components: {
-    HelloWorld
-  }
-}
+    FormApp,
+    ListApp,
+  },
+};
 </script>
 
+<!-- estilos -->
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+html,
+body{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+#app {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app-container {
+  margin-top: 35px;
+  display: flex;
+  height: auto;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
+
+@media (max-width: 820px) {
+  .app-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 </style>
