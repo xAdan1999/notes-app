@@ -6,7 +6,6 @@ export default createStore({
       username: "Alina",
       notes: [],
       count: 0,
-      title: ""
     };
   },
   //solo las mutaciones afectan al state
